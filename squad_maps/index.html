@@ -65,37 +65,20 @@
 
         data.features.forEach(feature => {
             feature.properties.image =
-                "<img src=img/" + images[feature.properties.name] +" width=\"500\" height=\"500\">";
+                "<img src=img/" + images[feature.properties.name] + " width=\"500\" height=\"500\">";
         });
 
         map.on('load', function () {
-            
+
             map.loadImage(
                 'empty_marker.png',
                 // Add an image to use as a custom marker
                 function (error, image) {
                     if (error) throw error;
-                    map.addImage('custom-marker', image);                
+                    map.addImage('custom-marker', image);
                     DoStuffWithLoadedImages();
                 }
             )
-
-            // for (const key in images) {
-            //     if (images.hasOwnProperty(key)) {
-            //         const element = images[key];
-            //         console.log(element);
-            //     }
-            // }
-            // Promise.all(
-            //         Object.entries(images).map(img => new Promise((resolve, reject) => {
-            //             img_url = img[1];
-            //             map.loadImage('img/' + img_url, function (error, res) {
-            //                 map.addImage(img[0], res)
-            //                 resolve();
-            //             })
-            //         }))
-            //     )
-            //     .then(DoStuffWithLoadedImages);
         });
 
         var DoStuffWithLoadedImages = function () {
@@ -115,7 +98,8 @@
                 'layout': {
                     'icon-image': 'custom-marker',
                     'icon-allow-overlap': true
-                }
+                },
+                "minzoom": 5,
             }, 'squad-maps-geojson-images');
 
             // Create a popup, but don't add it to the map yet.
@@ -131,7 +115,7 @@
 
                 var coordinates = e.features[0].geometry.coordinates.slice();
                 var image = e.features[0].properties.image;
-                
+
                 // Ensure that if the map is zoomed out such that multiple
                 // copies of the feature are visible, the popup appears
                 // over the copy being pointed to.
@@ -147,6 +131,30 @@
             map.on('mouseleave', 'popups', function () {
                 map.getCanvas().style.cursor = '';
                 popup.remove();
+            });
+
+            map.on('click', 'popups', function (e) {
+                var coordinates = e.features[0].geometry.coordinates.slice();
+                map.flyTo({
+                    center: coordinates,
+                    zoom: 12,
+                    bearing: 0,
+
+                    // These options control the flight curve, making it move
+                    // slowly and zoom out almost completely before starting
+                    // to pan.
+                    speed: 2, // make the flying slow
+                    curve: 1, // change the speed at which it zooms out
+
+                    // This can be any easing function: it takes a number between
+                    // 0 and 1 and returns another number between 0 and 1.
+                    easing: function (t) {
+                        return t;
+                    },
+
+                    // this animation is considered essential with respect to prefers-reduced-motion
+                    essential: true
+                });
             });
         }
     </script>
