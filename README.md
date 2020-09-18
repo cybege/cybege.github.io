@@ -3,6 +3,8 @@
 
 > *Now you'll know where you'll be deploying.*
 
+Online: [**https://cybege.github.io/squad_maps/**](https://cybege.github.io/squad_maps/)
+
 ## Community Quests
 1. Find where  [Gorodok](https://squad.gamepedia.com/Gorodok)  is located.
 
