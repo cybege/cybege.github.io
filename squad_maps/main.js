@@ -12,7 +12,7 @@ var map = new mapboxgl.Map({
     minZoom: 1.5,
     zoom: startZoom,
     center: startCoordinate,
-    style: 'mapbox://styles/egertu/ckf7bv0oj1bvh19myamuyin3i',
+    style: 'mapbox://styles/egertu/ckf7bv0oj1bvh19myamuyin3i?fresh=true',
 });
 
 var images = {
