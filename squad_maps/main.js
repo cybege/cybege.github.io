@@ -34,7 +34,7 @@ var images = {
     'Narva': 'Narva_Minimap_Alpha_V10.jpg',
     'Skorpo': 'Skorpo_minimap.jpg',
     'Al Basrah': 'Squad_Al_Basrah_2.jpg',
-    'Sumari': 'Sumari_minimap_V6.jpg',
+    'Sumari Bala': 'Sumari_minimap_V6.jpg',
     'Tallil Outskirts': 'Tallil_Outskirts_Minimap.jpg'
 };
 
