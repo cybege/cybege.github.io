@@ -1,5 +1,5 @@
 mapboxgl.accessToken =
-    'pk.eyJ1IjoiZWdlcnR1IiwiYSI6ImNqd3gzbDBkMTBxNHQ0M216aDhnN2htbDkifQ.VQnmmTRVTleFGdK7aDXczg';
+    'pk.eyJ1IjoiZWdlcnR1IiwiYSI6ImNrZjl5aG1uajBpaGsycWxkdmZ5Y2xvZDAifQ.d-9GNZ0Qa7slQb9zd-VRHg';
 
 var startCoordinate = [-18.167310, 50.450492],
     startZoom = 2;
@@ -153,13 +153,13 @@ function onMouseLeave() {
 }
 
 function openNav() {
-    document.getElementById("mySidebar").style.width = "300px";
+    document.getElementById("navSidebar").style.width = "300px";
     document.getElementById("openNavBtn").style.opacity = 0;
     document.getElementById("bulletin-board").style.opacity = 1;
 }
 
 function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("navSidebar").style.width = "0";
     document.getElementById("openNavBtn").style.opacity = 1;
     document.getElementById("bulletin-board").style.opacity = 0;
 }
