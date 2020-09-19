@@ -35,7 +35,8 @@ var images = {
     'Skorpo': 'Skorpo_minimap.jpg',
     'Al Basrah': 'Squad_Al_Basrah_2.jpg',
     'Sumari Bala': 'Sumari_minimap_V6.jpg',
-    'Tallil Outskirts': 'Tallil_Outskirts_Minimap.jpg'
+    'Tallil Outskirts': 'Tallil_Outskirts_Minimap.jpg',
+    'Harju': 'Harju.jpg'
 };
 
 data.features.forEach(feature => {
@@ -200,7 +201,7 @@ data.features.forEach(feature => {
     })
 
     newContent.classList.add("content", "subcontent");
-    if(name == "Mutaha"){
+    if(name == "Mutaha" || name == "Harju"){
         name +="*";
     }
     // newContent.innerText = name;
