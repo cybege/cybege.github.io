@@ -158,7 +158,7 @@ var data = {
         "type": "Feature",
         "properties": {
             "shape": "Marker",
-            "name": "Sumari",
+            "name": "Sumari Bala",
             "category": "Southern Asia",
             "note": "Official"
         },
